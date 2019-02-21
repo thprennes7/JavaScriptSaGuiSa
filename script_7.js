@@ -1,3 +1,6 @@
+console.log("===================>>> script_7.js <<<===================")
+
+
 const books = [
   { title: 'Gatsby le magnifique', id: 133712, rented: 9 },
   { title: 'A la recherche du temps,perdu', id: 237634, rented: 2 },

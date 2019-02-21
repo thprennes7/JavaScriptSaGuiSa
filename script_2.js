@@ -1,7 +1,12 @@
-let numFactory = prompt("De quel nombre veut tu calculer la factorielle ?"), factorial = 1;
+console.log("===================>>> script_2.js <<<===================")
 
-for(numFactory; numFactory > 0; numFactory--){
-  factorial *= numFactory;
+function factorialDo{
+  let numFactory = prompt("De quel nombre veut tu calculer la factorielle ?"), factorial = 1;
+
+  for(numFactory; numFactory > 0; numFactory--){
+    factorial *= numFactory;
+  };
+  return factorial;
 };
 
-console.log(factorial);
+console.log(factorialDo);
