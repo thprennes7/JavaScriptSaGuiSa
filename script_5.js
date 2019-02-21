@@ -10,7 +10,7 @@ let price = ["$6558.07", "$468.95", "$0.487526", "$762.84", "$8.86", "$85.26", "
 let cryptoCurrencies = {};
 devise.forEach((devise, i) => cryptoCurrencies[devise] = price[i]);
 
-
+console.log("Création du Hash :");
 console.log(cryptoCurrencies);
 
 function highestPrice(price, devise) {
@@ -52,6 +52,7 @@ function under6000(cryptoCurrencies) {
     };
 
   };
+  console.log("Monnaies en dessous de 6000$ :");
   console.log(under6000Devise);
   return under6000Devise;
 };
@@ -66,7 +67,7 @@ function highest6000(cryptoCurrencies, under) {
   };
   let highestPrice = Math.max(...price6000.map(x => parseFloat(x.replace('$', ''))));
   let indexOfMax = price6000.map(x => parseFloat(x.replace('$', ''))).indexOf(Math.max(...price6000.map(x => parseFloat(x.replace('$', '')))));
-  console.log(`${devise6000[indexOfMax]} est la monnaie la plus haute parmi celles dont le cours est inférieur à 6000 avec une valeur de : ${highestPrice}$`)
+  console.log(`${devise6000[indexOfMax]} est la monnaie la plus haute parmis celles dont le cours est inférieur à 6000 avec une valeur de : ${highestPrice}$`)
 };
 
 highest6000(cryptoCurrencies, under);

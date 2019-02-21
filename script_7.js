@@ -25,6 +25,7 @@ function rentedAll(booksNew){
   };
 };
 
+console.log("Les bouquins ont-ils été tous empruntés ?");
 console.log(rentedAll(booksNew));
 
 function mostRented(booksNew){
@@ -36,6 +37,7 @@ function mostRented(booksNew){
   console.log(booksNew[indexOfMax]);
 };
 
+console.log("Le bouquin le plus loué :");
 mostRented(booksNew);
 
 function leastRented(booksNew){
@@ -44,12 +46,14 @@ function leastRented(booksNew){
     numBookRent.push(book['rented']);
   });
   let indexOfMin = numBookRent.indexOf(Math.min(...numBookRent));
+  console.log("Le bouquin le moins loué :");
   console.log(booksNew[indexOfMin]);
 };
 
 leastRented(booksNew);
 
 function findId(booksNew, id){
+  console.log(`Le bouquin n° ${id} est :`);
   let zeBook;
   booksNew.forEach(book => {
     if (book['id'] === id) {
@@ -58,7 +62,6 @@ function findId(booksNew, id){
   });
   return zeBook;
 };
-
 console.log(findId(booksNew, 873495));
 
 function deleteBook(booksNew, id){
@@ -66,6 +69,8 @@ function deleteBook(booksNew, id){
   booksNew.forEach(book => {
     if (book['id'] !== id){
       curatedBooks.push(book);
+    } else {
+      console.log(`Suppression de ${book}`);
     };
   });
   return curatedBooks;
@@ -82,4 +87,5 @@ function booksSorted(booksNew){
   titleBook.sort();
   return titleBook;
 };
+console.log("Liste des bouquins rangée alphabétiquement :");
 console.log(booksSorted(booksNew));

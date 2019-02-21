@@ -23,6 +23,7 @@ function bornInTheUsa(entrepreneursNew) {
       bornInThe70s.push(entrepreneur);
     };
   });
+  console.log("Né dans les 70's :");
   console.log(bornInThe70s);
 };
 bornInTheUsa(entrepreneursNew);
@@ -33,8 +34,10 @@ function entrepreneursName(entrepreneursNew){
     let tempName = [];
     tempName.push(entrepreneur['first']);
     tempName.push(entrepreneur['last']);
+    tempName = tempName.join(" ")
     name.push(tempName);
   });
+  console.log("Noms et prénoms :");
   console.log(name);
 };
 
@@ -70,6 +73,7 @@ function entrepreneurSortByLast(entrepreneursNew){
       };
     });
   });
+  console.log("Les entrepreneurs par ordre alphabétique :");
   console.log(entrepreneurSorted);
 };
 
