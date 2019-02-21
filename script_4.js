@@ -88,8 +88,7 @@ function sortJournalistsLength(journalists){
   lengthSortedJournalists.sort(function(a, b){
     return a.length - b.length;
   });
-};
-console.log(journalists.slice(0, 50));
+  console.log(journalists.slice(0, 50));
 };
 
 sortJournalistsLength(journalists);

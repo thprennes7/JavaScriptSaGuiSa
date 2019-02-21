@@ -1,6 +1,6 @@
 console.log("===================>>> script_2.js <<<===================")
 
-function factorialDo{
+function factorialDo(){
   let numFactory = prompt("De quel nombre veut tu calculer la factorielle ?"), factorial = 1;
 
   for(numFactory; numFactory > 0; numFactory--){
@@ -9,4 +9,4 @@ function factorialDo{
   return factorial;
 };
 
-console.log(factorialDo);
+console.log(factorialDo());
