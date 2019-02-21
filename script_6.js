@@ -15,43 +15,60 @@ const entrepreneurs = [
 let entrepreneursNew = entrepreneurs;
 
 function bornInTheUsa(entrepreneursNew) {
-let bornInThe70s = [];
-entrepreneursNew.forEach(entrepreneur => {
-  if (entrepreneur['year'] >= 1970 && entrepreneur['year'] <= 1979){
-    bornInThe70s.push(entrepreneur);
-  };
-});
-console.log(bornInThe70s);
+  let bornInThe70s = [];
+  entrepreneursNew.forEach(entrepreneur => {
+    if (entrepreneur['year'] >= 1970 && entrepreneur['year'] <= 1979){
+      bornInThe70s.push(entrepreneur);
+    };
+  });
+  console.log(bornInThe70s);
 };
 bornInTheUsa(entrepreneursNew);
 
 function entrepreneursName(entrepreneursNew){
-let name = [];
-entrepreneursNew.forEach(entrepreneur => {
-  let tempName = [];
-  tempName.push(entrepreneur['first']);
-  tempName.push(entrepreneur['last']);
-  name.push(tempName);
-});
-console.log(name);
+  let name = [];
+  entrepreneursNew.forEach(entrepreneur => {
+    let tempName = [];
+    tempName.push(entrepreneur['first']);
+    tempName.push(entrepreneur['last']);
+    name.push(tempName);
+  });
+  console.log(name);
 };
 
 entrepreneursName(entrepreneursNew);
 
 function entrepreneursAge(entrepreneursNew){
-entrepreneursNew.forEach(entrepreneur => {
-  let currentAge = 0;
-  currentAge = 2019 - entrepreneur['year'];
-  console.log(`${entrepreneur['first']} ${entrepreneur['last']} aurait eu ${currentAge} ans aujourd'hui`);
-});
+  entrepreneursNew.forEach(entrepreneur => {
+    let currentAge = 0;
+    currentAge = 2019 - entrepreneur['year'];
+    console.log(`${entrepreneur['first']} ${entrepreneur['last']} aurait eu ${currentAge} ans aujourd'hui`);
+  });
 };
 entrepreneursAge(entrepreneursNew);
 
-function entrepreneurLast(entrepreneursNew){
-  let entrepreneurSort = entrepreneursNew;
-  entrepreneurSort.sort(function(a, b){
-    return a['last'] - b["last"];
+// function entrepreneurLast(entrepreneursNew){
+//   let entrepreneurSort = entrepreneursNew;
+//   entrepreneurSort.sort(function(a, b){
+//     return a['last'] - b["last"];
+//   });
+//   console.log(entrepreneurSort);
+// };
+
+function entrepreneurSortByLast(entrepreneursNew){
+  let lastName = [], entrepreneurSorted = [];
+  entrepreneursNew.forEach(entrepreneur => {
+    lastName.push(entrepreneur['last']);
   });
-  console.log(entrepreneurSort);
+  lastName.sort();
+  lastName.forEach(name => {
+    entrepreneursNew.forEach(entrepreneur => {
+      if (name === entrepreneur['last']){
+          entrepreneurSorted.push(entrepreneur);
+      };
+    });
+  });
+  console.log(entrepreneurSorted);
 };
-entrepreneurLast(entrepreneursNew);
+
+entrepreneurSortByLast(entrepreneursNew);
